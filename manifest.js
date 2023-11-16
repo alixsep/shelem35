@@ -6,9 +6,7 @@ const manifest = {
     theme_color: '#242325',
     background_color: '#242325',
     display: 'standalone',
-    // scope: '/',
-    // start_url: '/',
-    orientation: 'portrait',
+    orientation: 'any',
     icons: [
       {
         src: 'android-chrome-192x192.png',
