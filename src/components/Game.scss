@@ -1,0 +1,88 @@
+.game {
+  .table-wrapper {
+    width: 100%;
+    .game-table {
+      margin: 0 auto;
+      th,
+      td {
+        padding: 4px 16px;
+      }
+      th {
+        width: 128px;
+      }
+      td {
+        .wrapper {
+          display: flex;
+        }
+        .display {
+          width: 64px;
+        }
+      }
+      .calculation-cell {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        .calculate-button {
+          width: 24px;
+          height: 24px;
+          border-radius: 4px;
+          overflow: hidden;
+          position: relative;
+          cursor: pointer;
+          // Browser bug that if I write 'background-color: #fff;' here, the rounded corners
+          // would be rendered with artifacts. Using '::before' instead.
+          &::before {
+            content: '';
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            background: #fff;
+            z-index: -1;
+          }
+          .svg-icon {
+            width: 32px;
+            height: 32px;
+            color: rgb(29, 155, 214);
+          }
+        }
+      }
+    }
+  }
+  .actions {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 16px 32px;
+    .action-button {
+      height: 24px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      padding: 4px 6px 4px 4px;
+      gap: 4px;
+      cursor: pointer;
+      &.undo {
+        background-color: rgb(118, 67, 160);
+      }
+      &.cheat {
+        background-color: rgb(219, 28, 102);
+        /* TODO: Add functionality for subtracting point if a team cheats. */
+        text-decoration: line-through;
+      }
+      .svg-icon {
+        width: 16px;
+      }
+    }
+  }
+  .reset-button {
+    height: 24px;
+    border-radius: 4px;
+    background-color: rgb(235, 135, 54);
+    width: fit-content;
+    padding: 0 6px;
+    margin: 16px auto;
+    cursor: pointer;
+  }
+}
