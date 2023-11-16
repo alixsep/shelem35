@@ -3,7 +3,7 @@ import './Credit.scss';
 const Credit = () => {
   return (
     <div className='credit'>
-      Shelem35 v.1.0.1 -- Made with ♠ by{' '}
+      Shelem35 v.1.0.3 -- Made with ♠ by{' '}
       <a href='https://github.com/alixsep' rel='noreferrer' target='_blank'>
         Alixsep
       </a>

@@ -9,6 +9,8 @@
     border-radius: 4px;
     position: relative;
     cursor: pointer;
+    display: grid;
+    place-content: center;
     .placeholder {
       color: #777;
     }
@@ -55,5 +57,11 @@
         }
       }
     }
+  }
+}
+@media only screen and (max-width: 600px) {
+  #root .select-input,
+  #root .select-input .display {
+    width: 48px;
   }
 }

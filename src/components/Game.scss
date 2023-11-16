@@ -26,8 +26,9 @@
           width: 24px;
           height: 24px;
           border-radius: 4px;
-          overflow: hidden;
+          // overflow: hidden;
           position: relative;
+          flex: 0 0;
           cursor: pointer;
           // Browser bug that if I write 'background-color: #fff;' here, the rounded corners
           // would be rendered with artifacts. Using '::before' instead.
@@ -84,5 +85,23 @@
     padding: 0 6px;
     margin: 16px auto;
     cursor: pointer;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .game .table-wrapper .game-table {
+    th,
+    td {
+      width: 80px;
+      padding: 4px 0;
+    }
+  }
+}
+@media only screen and (max-width: 400px) {
+  .game .table-wrapper .game-table {
+    font-size: 12px;
+    th,
+    td {
+      width: 60px;
+    }
   }
 }
