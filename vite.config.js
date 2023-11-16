@@ -5,5 +5,6 @@ import manifest from './manifest';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/shelem35/',
   plugins: [react(), VitePWA(manifest)],
 });
