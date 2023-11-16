@@ -16,7 +16,7 @@ export const calculateScores = (latestRound) => {
   if (scores[oppTeamIndex] < 1000) {
     finalScores[oppTeamIndex] = scores[oppTeamIndex] + oppScore;
   } else {
-    if (score <= 80) {
+    if (score <= betValue) {
       finalScores[oppTeamIndex] = scores[oppTeamIndex] + oppScore;
     }
   }
