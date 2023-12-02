@@ -64,27 +64,10 @@
       padding: 4px 6px 4px 4px;
       gap: 4px;
       cursor: pointer;
-      &.undo {
-        background-color: rgb(118, 67, 160);
-      }
-      &.cheat {
-        background-color: rgb(219, 28, 102);
-        /* TODO: Add functionality for subtracting point if a team cheats. */
-        text-decoration: line-through;
-      }
       .svg-icon {
         width: 16px;
       }
     }
-  }
-  .reset-button {
-    height: 24px;
-    border-radius: 4px;
-    background-color: rgb(235, 135, 54);
-    width: fit-content;
-    padding: 0 6px;
-    margin: 16px auto;
-    cursor: pointer;
   }
 }
 @media only screen and (max-width: 600px) {
@@ -104,4 +87,12 @@
       width: 60px;
     }
   }
+}
+.undo,
+.component-with-modal .options.undo {
+  background-color: rgb(118, 67, 160);
+}
+.reset-game,
+.component-with-modal .options.reset-game {
+  background-color: rgb(219, 28, 102);
 }

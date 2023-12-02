@@ -56,3 +56,7 @@ export const scoreOptions = [
   { text: '160', value: '160' },
   { text: '165', value: '165' },
 ];
+export const confirmationOptions = [
+  { text: 'No', value: false },
+  { text: 'Yes', value: true },
+];

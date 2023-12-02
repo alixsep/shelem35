@@ -3,6 +3,7 @@ const manifest = {
     name: 'Shelem35',
     short_name: 'Shelem35',
     description: 'A PWA for Shelem Game in the Room 35.',
+    author: 'Alixsep',
     theme_color: '#242325',
     background_color: '#242325',
     display: 'standalone',

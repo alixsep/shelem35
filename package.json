@@ -1,8 +1,7 @@
 {
   "name": "shelem35",
   "private": true,
-  "version": "1.0.4",
-  "type": "module",
+  "version": "1.1.0",  "type": "module",
   "homepage": "https://alixsep.github.io/shelem35",
   "scripts": {
     "dev": "vite",

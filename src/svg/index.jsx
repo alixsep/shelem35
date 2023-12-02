@@ -26,16 +26,16 @@ export const Undo_SVG = () => (
     <path d='M4 9h10.5a5.5 5.5 0 0 1 5.5 5.5v0a5.5 5.5 0 0 1-5.5 5.5H11'></path>
   </svg>
 );
-export const Cheat_SVG = () => (
+export const Trash_SVG = () => (
   <svg
     className='svg-icon'
     stroke='currentColor'
     fill='currentColor'
     strokeWidth='0'
-    viewBox='0 0 24 24'
+    viewBox='0 0 256 256'
     xmlns='http://www.w3.org/2000/svg'
   >
-    <path d='M11 15h2v2h-2v-2zm0-8h2v6h-2V7zm.99-5C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z'></path>
+    <path d='M216,48H180V36A28,28,0,0,0,152,8H104A28,28,0,0,0,76,36V48H40a12,12,0,0,0,0,24h4V208a20,20,0,0,0,20,20H192a20,20,0,0,0,20-20V72h4a12,12,0,0,0,0-24ZM100,36a4,4,0,0,1,4-4h48a4,4,0,0,1,4,4V48H100Zm88,168H68V72H188ZM116,104v64a12,12,0,0,1-24,0V104a12,12,0,0,1,24,0Zm48,0v64a12,12,0,0,1-24,0V104a12,12,0,0,1,24,0Z'></path>
   </svg>
 );
 export const Close_SVG = () => (

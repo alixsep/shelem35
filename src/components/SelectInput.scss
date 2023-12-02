@@ -15,49 +15,6 @@
       color: #777;
     }
   }
-  .options {
-    background-color: rgb(26, 26, 27);
-    width: 140px;
-    padding: 4px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 4px;
-    display: inline-flex;
-    flex-flow: wrap;
-    gap: 4px;
-    z-index: 1;
-    .option {
-      width: 64px;
-      height: 24px;
-      border-radius: 4px;
-      cursor: pointer;
-      &:hover {
-        background-color: #ffffff20;
-      }
-    }
-    .titlebar {
-      width: 100%;
-      font-weight: bold;
-      display: flex;
-      .title {
-        flex-grow: 1;
-      }
-      .close-button {
-        width: 24px;
-        height: 24px;
-        border-radius: 4px;
-        cursor: pointer;
-        &:hover {
-          background-color: #ffffff20;
-        }
-        .svg-icon {
-          width: 24px;
-        }
-      }
-    }
-  }
 }
 @media only screen and (max-width: 600px) {
   #root .select-input,

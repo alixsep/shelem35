@@ -1,54 +1,32 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 
 import './Game.scss';
 
-import { Calculate_SVG, Cheat_SVG, Undo_SVG } from '../svg';
+import { Calculate_SVG, Trash_SVG, Undo_SVG } from '../svg';
 import SelectInput from './SelectInput';
 import ColonSpacer from './ColonSpacer';
+// import ActionButton from './ActionButton';
 
-import { calculateScores, detectWinner } from '../gameLogic';
-import { betOptions, scoreOptions, teamOptions } from '../gameValues';
+import {
+  betOptions,
+  confirmationOptions,
+  scoreOptions,
+  teamOptions,
+} from '../gameValues';
+import useGame from '../hooks/useGame';
+import MiniModal from './MiniModal';
 
 const Game = () => {
-  const [gameWinner, setGameWinner] = useState('');
-  const [gameHistory, setGameHistory] = useState([]);
-  const [latestRound, setLatestRound] = useState({
-    bet: { team: '', value: '' },
-    scores: [0, 0],
-    score: '',
-  });
+  const {
+    gameWinner,
+    gameHistory,
+    latestRound,
+    setLatestRound,
+    finishRound,
+    undo,
+    reset,
+   } = useGame();
 
-  const finishRound = () => {
-    // Validation
-    const isValid =
-      latestRound.bet.team && latestRound.bet.value && latestRound.score;
-
-    if (isValid) {
-      // Game Logic
-      const finalScores = calculateScores(latestRound);
-
-      setGameHistory((p) => [...p, latestRound]);
-      setLatestRound({
-        bet: { team: '', value: '' },
-        scores: finalScores,
-        score: '',
-      });
-
-      const winner = detectWinner(finalScores);
-      setGameWinner(winner);
-    }
-  };
-
-  const undo = () => {
-    if (gameHistory.length > 0) {
-      const previousGameHistory = [...gameHistory];
-      const previousRound = previousGameHistory.pop();
-
-      setLatestRound(previousRound);
-      setGameHistory(previousGameHistory);
-      setGameWinner('');
-    }
-  };
   return (
     <div className='game'>
       <div className='table-wrapper'>
@@ -126,34 +104,37 @@ const Game = () => {
         </table>
       </div>
       <div className='actions'>
-        {/* TODO: Add functionality for subtracting point if a team cheats. */}
-        <div className='action-button cheat'>
-          <Cheat_SVG />
-          Cheat Penalty
-        </div>
-        <div className='action-button undo' onClick={undo}>
-          <Undo_SVG />
-          Undo Round
-        </div>
+        <MiniModal
+          className={'reset-game'}
+          placeholder={'Are you sure?'}
+          options={confirmationOptions}
+          action={(choice) => {
+            choice && reset();
+          }}
+          noSelect
+        >
+          <div className='action-button reset-game'>
+            <Trash_SVG />
+            Reset Game
+          </div>
+        </MiniModal>
+        <MiniModal
+          className={'undo'}
+          placeholder={'Are you sure?'}
+          options={confirmationOptions}
+          action={(choice) => {
+            choice && undo();
+          }}
+          noSelect
+        >
+          <div className='action-button undo'>
+            <Undo_SVG />
+            Undo Round
+          </div>
+        </MiniModal>
       </div>
       <div className='status'>
         Status: {gameWinner === '' ? 'playing...' : `Team ${gameWinner} won!`}
-        {gameWinner === '' ? null : (
-          <div
-            className='reset-button'
-            onClick={() => {
-              setGameWinner('');
-              setGameHistory([]);
-              setLatestRound({
-                bet: { team: '', value: '' },
-                scores: [0, 0],
-                score: '',
-              });
-            }}
-          >
-            Reset Game
-          </div>
-        )}
       </div>
     </div>
   );
