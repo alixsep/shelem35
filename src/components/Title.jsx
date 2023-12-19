@@ -1,6 +1,6 @@
 import './Title.scss';
 
-import CardImage from '../img/card.png';
+import CardImage from '../img/card.webp';
 import TitleImage from '../img/shelem35.webp';
 
 const Title = () => {
